@@ -1,4 +1,4 @@
-const converter = document.querySelector("#converter");
+let converter = document.querySelector("#converter");
 const result = document.querySelector(".result");
 const convBtn = document.querySelector(".conv");
 const resetBtn = document.querySelector(".reset");
@@ -17,4 +17,13 @@ const swap = () => {
 	}
 };
 
+const convert = () => {
+	if (one.textContent === "°C") {
+		result.textContent = converter.value * 1.8 + 32;
+	} else {
+		result.textContent = converter.value - 31 / 1.8;
+	}
+};
+
 changeBtn.addEventListener("click", swap);
+convBtn.addEventListener("click", convert);
